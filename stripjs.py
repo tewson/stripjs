@@ -6,10 +6,14 @@ if len(sys.argv) < 3:
   print "Not enough arguments."
 
 else:
-  datacat = sys.argv[1]
-  datasrc = sys.argv[2]
+  if sys.argv[1] == "-o":
+    #overriding default directory
+    filename = sys.argv[2]
+  else:
+    datacat = sys.argv[1]
+    datasrc = sys.argv[2]
   
-  filename = default_dir+datacat+"/"+datasrc+".html"
+    filename = default_dir+datacat+"/"+datasrc+".html"
   
   print filename
   
